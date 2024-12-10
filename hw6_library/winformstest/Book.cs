@@ -29,7 +29,7 @@ namespace Library
         }
         public override string ToString()
         {
-            return $"{Title} by {Author} (ID: {Id})";
+            return $"[ID: {Id}] {Title} by {Author}";
         }
 
     }

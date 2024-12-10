@@ -26,11 +26,22 @@ namespace Library
                 MessageBox.Show($"Book with ID {bookId} not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        public void AddBook(Book book)
+        {
+            var newBook = new Book
+            {
+                Id = CurrentId++,
+                Title = book.Title,
+                Author = book.Author,
+                Genre = book.Genre,
+                YearPublished = book.YearPublished
+            };
+
+            Books.Add(newBook);
+        }
         public void SaveToFile(Book book)
         {
-            book.Id = CurrentId;
-            Books.Add(book);
-            CurrentId++;
+            AddBook(book);
 
             try
             {
